@@ -1,0 +1,85 @@
+@font-face {
+    src: url("CursedTimerUlil-Aznm.ttf");
+    font-family: CursedTimerUlil-Aznm;
+}
+
+body {
+    margin: 0;
+    background: #E5E5E5;
+    text-align: center;
+}
+
+.container {
+    background: #1B244A;
+    padding: 70px 0px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    color: #EEEEEE;
+    font-size: 40px;
+    margin: 0;
+}
+
+.score-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    color: #F94F6D;
+    font-size: 90px;
+    background: #080001;
+    font-family: CursedTimerUlil-Aznm;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    width: 100%;
+    border: 2px #080001 solid;
+}
+
+.scores {
+    height: 85px;
+    margin: 0;
+}
+
+.score-btn {
+    background: none;
+    font-family: CursedTimerUlil-Aznm;
+    color: #9AABD8;
+    border: #9AABD8 solid 2px;
+    border-radius: 5px;
+    font-size: 18px;
+    width: 45px;
+    height: 45px;
+}
+
+.buttons {
+    width: 155px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.highlight {
+    border: 2px #F94F6D solid;
+}
+
+.ng-btn {
+    background: none;
+    font-family: CursedTimerUlil-Aznm;
+    color: #9AABD8;
+    border: #9AABD8 solid 2px;
+    border-radius: 5px;
+    font-size: 18px;
+    height: 45px;
+    margin-top: 25px;
+}
