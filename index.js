@@ -1,63 +1,54 @@
-let homeScoreText = document.getElementById("home-score")
-let guestScoreText = document.getElementById("guest-score")
-let homeScoreDiv = document.getElementById("home-score-div")
-let guestScoreDiv = document.getElementById("guest-score-div")
-let homeScore = 0;
-let guestScore = 0;
+const homeScoreDiv = document.getElementById("home-score-div")
+const guestScoreDiv = document.getElementById("guest-score-div")
 
-function homeScore1() {
-    homeScore++
-    homeScoreText.textContent = homeScore
-    highlight()
-}
+let homeScore = 0
+let guestScore = 0
 
-function homeScore2() {
-    homeScore += 2
-    homeScoreText.textContent = homeScore
-    highlight()
-}
-
-function homeScore3() {
-    homeScore += 3
-    homeScoreText.textContent = homeScore
-    highlight()
-}
-
-function guestScore1() {
-    guestScore++
-    guestScoreText.textContent = guestScore
-    highlight()
-}
-
-function guestScore2() {
-    guestScore += 2
-    guestScoreText.textContent = guestScore
-    highlight()
-}
-
-function guestScore3() {
-    guestScore += 3
-    guestScoreText.textContent = guestScore
-    highlight()
-}
-
-function highlight() {
-    if (homeScore > guestScore) {
-        homeScoreDiv.className = "score-div" + " highlight"
-        guestScoreDiv.className = "score-div"
-    } else if (homeScore < guestScore) {
-        guestScoreDiv.className = "score-div" + " highlight"
-        homeScoreDiv.className = "score-div"
-    } else {
-        homeScoreDiv.className = "score-div"
-        guestScoreDiv.className = "score-div"
+document.addEventListener('click', e => {
+    switch(e.target.id) {
+        case "home-score-1":
+            homeScore += 1
+            break
+        case "home-score-2":
+            homeScore += 2
+            break
+        case "home-score-3":
+            homeScore += 3
+            break
+        case "guest-score-1":
+            guestScore += 1
+            break
+        case "guest-score-2":
+            guestScore += 2
+            break
+        case "guest-score-3":
+            guestScore += 3
+            break
+        default:
+            break
     }
-}
+    updateScoreTable()
+})
 
-function newGame() {
+document.getElementById("ng-btn").addEventListener('click', () => {
     homeScore = 0
     guestScore = 0
-    homeScoreText.textContent = homeScore
-    guestScoreText.textContent = guestScore
-    highlight()
+    updateScoreTable()
+})
+
+function updateScoreTable() {
+    document.getElementById("home-score").textContent = homeScore
+    document.getElementById("guest-score").textContent = guestScore
+    highlightScore()
+}
+
+function highlightScore() {
+    guestScoreDiv.classList.remove("highlight")
+    homeScoreDiv.classList.remove("highlight")
+
+    if (homeScore > guestScore) {
+        homeScoreDiv.classList.add("highlight")
+    } else if (homeScore < guestScore) {
+        guestScoreDiv.classList.add("highlight")
+    }
 }
