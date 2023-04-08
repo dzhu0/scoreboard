@@ -1,5 +1,5 @@
-const homeScoreDiv = document.getElementById("home-score-div")
-const guestScoreDiv = document.getElementById("guest-score-div")
+const homeScoreText = document.getElementById("home-score")
+const guestScoreText = document.getElementById("guest-score")
 
 let homeScore = 0
 let guestScore = 0
@@ -37,18 +37,18 @@ document.getElementById("ng-btn").addEventListener('click', () => {
 })
 
 function updateScoreTable() {
-    document.getElementById("home-score").textContent = homeScore
-    document.getElementById("guest-score").textContent = guestScore
+    homeScoreText.textContent = homeScore
+    guestScoreText.textContent = guestScore
     highlightScore()
 }
 
 function highlightScore() {
-    guestScoreDiv.classList.remove("highlight")
-    homeScoreDiv.classList.remove("highlight")
+    homeScoreText.classList.remove("highlight")
+    guestScoreText.classList.remove("highlight")
 
     if (homeScore > guestScore) {
-        homeScoreDiv.classList.add("highlight")
+        homeScoreText.classList.add("highlight")
     } else if (homeScore < guestScore) {
-        guestScoreDiv.classList.add("highlight")
+        guestScoreText.classList.add("highlight")
     }
 }

@@ -3,64 +3,64 @@
     font-family: CursedTimerUlil-Aznm;
 }
 
-body {
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
     margin: 0;
-    background: #E5E5E5;
+}
+
+html,
+body {
+    height: 100vh;
+    background-color: #1B244A;
     text-align: center;
 }
 
 .container {
-    background: #1B244A;
-    padding: 70px 0px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
 }
 
 .cards {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.card {
+    width: 100%;
+    max-width: 525px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
 }
 
 .title {
     color: #EEEEEE;
     font-size: 40px;
-    margin: 0;
-}
-
-.score-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 120px;
-    color: #F94F6D;
-    font-size: 90px;
-    background: #080001;
-    font-family: CursedTimerUlil-Aznm;
-    margin-top: 15px;
-    margin-bottom: 25px;
-    border-radius: 5px;
-    width: 100%;
-    border: 2px #080001 solid;
 }
 
 .scores {
-    height: 85px;
-    margin: 0;
+    background-color: #080001;
+    font-family: CursedTimerUlil-Aznm, sans-serif;
+    font-size: 90px;
+    color: #F94F6D;
+    line-height: 130px;
+    border: 2px #080001 solid;
+    border-radius: 5px;
+    padding-top: 15px;
+    margin-block: 15px 25px;
 }
 
-.score-btn {
+button {
     background: none;
-    font-family: CursedTimerUlil-Aznm;
+    font-family: CursedTimerUlil-Aznm, sans-serif;
     color: #9AABD8;
     border: #9AABD8 solid 2px;
     border-radius: 5px;
     font-size: 18px;
-    width: 45px;
-    height: 45px;
+    padding: 10px;
 }
 
 .buttons {
@@ -69,17 +69,11 @@ body {
     justify-content: space-between;
 }
 
-.highlight {
-    border: 2px #F94F6D solid;
-}
+.highlight { border-color: #F94F6D; }
 
-.ng-btn {
-    background: none;
-    font-family: CursedTimerUlil-Aznm;
-    color: #9AABD8;
-    border: #9AABD8 solid 2px;
-    border-radius: 5px;
-    font-size: 18px;
-    height: 45px;
-    margin-top: 25px;
+@media (min-width:425px) {
+    .cards {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 }
